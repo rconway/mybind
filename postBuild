@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# set -e
+
+ORIG_DIR="$(pwd)"
+cd "$(dirname "$0")"
+BIN_DIR="$(pwd)"
+
+trap "cd '${ORIG_DIR}'" EXIT
+
+echo "postBuild runs at $(date -u)" >rac-postBuild.txt
